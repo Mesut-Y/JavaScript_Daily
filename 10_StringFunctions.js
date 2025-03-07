@@ -38,7 +38,15 @@ console.log("toUpperCase ile harf büyütme: ", sentence.toUpperCase()); //dont 
 let sentenceTrim= "             Merhaba Dünya         ";
 console.log("trim ile boşlujları temizleme: ", sentenceTrim.trim()); //dont change original string
 
+console.log("substring ile alt dizi döndürme: ",sentence.substring(7,10));
+console.log("slice ile alt dizi döndürme: ",sentence.slice(7,10));
 
+//fark1
+console.log("substring ile alt dizi döndürme: ",sentence.substring(50,3)); //start stop yer değiştirir.
+console.log("slice ile alt dizi döndürme: ",sentence.slice(50,3)); //işlem yapmaz.
 
+//fark2
+console.log("substring ile alt dizi döndürme: ",sentence.substring(49,-3)); //start stop yer değiştirir.
+console.log("slice ile alt dizi döndürme: ",sentence.slice(49,-3)); //stop - ise sondan sayar.
 
 

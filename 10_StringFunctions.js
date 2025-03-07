@@ -12,11 +12,14 @@ trim()
 slice()
 substring()
 
-replace()
 split()
-valueOf()
+
+replace()
+replaceAll()
+
 startsWith()
 endsWith()
+valueOf()
 */
 
 let sentence = "Geriye düştüğünüzde değil pes ettiğinizde yenilirsiniz.";
@@ -40,13 +43,22 @@ console.log("trim ile boşlujları temizleme: ", sentenceTrim.trim()); //dont ch
 
 console.log("substring ile alt dizi döndürme: ",sentence.substring(7,10));
 console.log("slice ile alt dizi döndürme: ",sentence.slice(7,10));
-
 //fark1
 console.log("substring ile alt dizi döndürme: ",sentence.substring(50,3)); //start stop yer değiştirir.
 console.log("slice ile alt dizi döndürme: ",sentence.slice(50,3)); //işlem yapmaz.
-
 //fark2
 console.log("substring ile alt dizi döndürme: ",sentence.substring(49,-3)); //start stop yer değiştirir.
 console.log("slice ile alt dizi döndürme: ",sentence.slice(49,-3)); //stop - ise sondan sayar.
+
+let array = sentence.split(" ",3); //3 array lengthini belirtir.
+console.log("split fonksiyonu ile string to array", array);
+
+console.log("replace fonksiyonu ile yer değiştirme: ", sentence.replace("de","te")); //ilk bulunan değişti
+console.log("replaceAll fonksiyonu ile yer değiştirme: ", sentence.replaceAll("de","te"));//hepsi değişti
+
+console.log("startsWith ile başlangıç kontrolü true/false: ",sentence.startsWith("Geriye"));
+console.log("endsWith ile sonlanma kontrolü true/false: ",sentence.endsWith("siniz."));
+
+console.log(sentence.valueOf()); //sadece sentence değerini geri döner.
 
 

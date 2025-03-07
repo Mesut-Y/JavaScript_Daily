@@ -28,3 +28,25 @@ let watch6 = {
     model : "AR11215",
     price : 22167.00
 }
+
+let watches = [watch1, watch2, watch3, watch4, watch5, watch6];
+let userChoice = prompt("Hangi saati arıyorsunuz?");
+let filteredWatches = new Array;
+findWatch(userChoice);
+writeWatches(filteredWatches);
+
+function findWatch(find){
+    watches.forEach(function(item){
+        if(item.brand.toLowerCase().includes(find.toLowerCase()))
+            filteredWatches.push(item);
+    });
+}
+
+function writeWatches(writed){
+    console.log("Marka","\t\t|\t","Model","\t|\t","Fiyat");
+    writed.forEach(function(item){
+        console.log("---------------------------------------------");
+        console.log(item.brand,"\t\t|\t ",item.model,"\t|\t",item.price);
+        console.log("---------------------------------------------");
+    });
+}

@@ -22,7 +22,7 @@ unshift : ADDS an element to the START of the array and returns the length of th
 splice(startindex, removepieces, item1,item2,..,itemn): add or delete element to array BY PREFERENCE.
 
 toString: diziyi stringe çevirir.
-join("-"): diziyi stringe çevirir. Ayrıca eleman ekler.
+join("-"): diziyi stringe çevirir. Ayrıca sembol ekler.
 split("-"): belirli işarete göre stringi bölüp diziye çevirir.
 
 concat  : iki dizi birleştirir.

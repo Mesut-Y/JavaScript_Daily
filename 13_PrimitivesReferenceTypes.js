@@ -1,5 +1,12 @@
-let array1 = [1,2,3,4];
+//primitive variables only save a value
+let num1 = 5;
+let num2 = num1;
+num1 = 6;
+console.log("num1 5 iken 6 ataması yapılmıştır: ", num1, "num2=num1 olmasına rağmen num2: ", num2);
 
+//reference variable only save a memory address
+console.log("------------------------------------------------------------");
+let array1 = [1,2,3,4];
 console.log("Dizilerin tipi: ", typeof array1, " Değerleri: ", array1);
 
 console.log("------------------------------------------------------------");

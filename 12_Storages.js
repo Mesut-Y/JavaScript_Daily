@@ -28,6 +28,8 @@ value2.forEach(function (item){
     console.log(item);
 });
 
+//sessionStorage.clear();  //hepsini siler
+
 // let value3 = sessionStorage.getItem(5).split(","); //olmuyor çünkü [ ve " sembollerini alıyor.
 // let value3 = Array.from(sessionStorage.getItem(5)); // olmuyor tüm karakterleri dizi yapıyor.
 // console.log(value3);
@@ -35,4 +37,20 @@ value2.forEach(function (item){
 //     console.log(item);
 // });
 
-//sessionStorage.clear();  //hepsini siler
+localStorage.clear();
+localStorage.setItem("1", "January"); //key-value stringtir.
+localStorage.setItem(2, "February");
+localStorage.setItem(3,"March");
+localStorage.setItem("4","April");
+localStorage.setItem(5,"May");
+
+let value3 = localStorage.getItem(4);
+console.log("LocalStorage 4.değer: ",value3);
+
+let months = ["June", "July", "August", "September", "October", "November", "December"];
+localStorage.setItem("months", JSON.stringify(months));
+let value4 = JSON.parse(localStorage.getItem("months"));
+console.log(value4);
+value4.forEach(function (item) {
+    console.log(item);
+});

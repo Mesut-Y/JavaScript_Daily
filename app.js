@@ -12,6 +12,8 @@ start();
 
 function start(){
     todoAddButton.addEventListener("click",addTodo);  //- todoForm.addEventListener("submit", addTodo); 
+    document.addEventListener("DOMContentLoaded",loadPage);
+    todoBody2.addEventListener("click".removeTodo);
 }
 
 function addTodo(e) {
@@ -68,7 +70,7 @@ function showAlert(alertType, alertMessage){
     div.role = "alert";
     div.textContent = alertMessage;
     todoBody1.appendChild(div);
-    
+
     setTimeout(function(){
         div.remove();
     },2000);
@@ -76,6 +78,22 @@ function showAlert(alertType, alertMessage){
 //  <div class="alert alert-warning" role="alert">
 //   This is a warning alert—check it out!
 //  </div>
+}
+
+function loadPage(){
+    checkStorage();
+    todos.forEach(function (item){
+        addTodoUIElement(item);
+    })
+}
+
+function removeTodo(){
+    removeTodoUIElement();
+    //removeTodoMemory();
+}
+
+function removeTodoUIElement(){
+    
 }
 
 

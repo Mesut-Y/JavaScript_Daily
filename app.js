@@ -13,7 +13,7 @@ start();
 function start(){
     todoAddButton.addEventListener("click",addTodo);  //- todoForm.addEventListener("submit", addTodo); 
     document.addEventListener("DOMContentLoaded",loadPage);
-    todoBody2.addEventListener("click".removeTodo);
+    todoBody2.addEventListener("click",removeTodo);
 }
 
 function addTodo(e) {
@@ -87,13 +87,17 @@ function loadPage(){
     })
 }
 
-function removeTodo(){
-    removeTodoUIElement();
+function removeTodo(e){
+    removeTodoUIElement(e);
     //removeTodoMemory();
 }
 
-function removeTodoUIElement(){
-    
+function removeTodoUIElement(e){
+    console.log(e.target);
+    if( e.target.className === "fa fa-remove"){
+        const todo = e.target.parentElement.parentElement;
+        todo.remove();
+    }
 }
 
 

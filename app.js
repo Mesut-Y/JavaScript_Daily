@@ -17,12 +17,13 @@ function start(){
 function addTodo(e) {
     const inputText = todoInput.value.trim();
     if (inputText==null || inputText==""){
-        alert("Lütfen boş bırakmayınız.");
+        showAlert("warning", "Lütfen geçerli bir todo yazınız.");
     }
     else{
         console.log("submit");
         addTodoUIElement(inputText); //like UI
         addTodoMemory(inputText);  //like DB
+        showAlert("success", "Todo Eklendi.");
     }
     console.log("preventDefault");
     e.preventDefault();
@@ -59,6 +60,22 @@ function checkStorage(){
     else{
         todos = JSON.parse(localStorage.getItem("todos"));
     }
+}
+
+function showAlert(alertType, alertMessage){
+    const div = document.createElement("div");
+    div.className = "alert alert-"+alertType; //div.className = `alert alert-${alertType}`; //literal template
+    div.role = "alert";
+    div.textContent = alertMessage;
+    todoBody1.appendChild(div);
+    
+    setTimeout(function(){
+        div.remove();
+    },2000);
+
+//  <div class="alert alert-warning" role="alert">
+//   This is a warning alert—check it out!
+//  </div>
 }
 
 

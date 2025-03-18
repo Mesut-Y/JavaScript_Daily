@@ -6,6 +6,7 @@ const todoAddButton = document.querySelector("#todoAddButton");
 const todoForm = document.querySelector("#todoAddForm");
 const todoListGroup = document.querySelector(".list-group");
 const todosClearButton = document.querySelector("#todoClearButton");
+let todos;
 
 start();
 
@@ -19,11 +20,9 @@ function addTodo(e) {
         alert("Lütfen boş bırakmayınız.");
     }
     else{
-        //- todo UI  göster
         console.log("submit");
-        addTodoUIElement(inputText);
-
-        //- localstorage ekle
+        addTodoUIElement(inputText); //like UI
+        addTodoMemory(inputText);  //like DB
     }
     console.log("preventDefault");
     e.preventDefault();
@@ -43,14 +42,24 @@ a.appendChild(i);
 li.appendChild(a);
 todoListGroup.appendChild(li);
 
-//     <!-- <li class="list-group-item d-flex justify-content-between">Todo 1
-//     <a href="#" class="delete-item">
-//         <i class="fa fa-remove"></i>
-//     </a>
-// </li> -->
+
 }
 
+function addTodoMemory(newTodo){
+    checkStorage();
+    todos.push(newTodo);
+    localStorage.setItem("todos",JSON.stringify(todos));
+    console.log(todos);
+}
 
+function checkStorage(){
+    if(localStorage.getItem("todos") === null){
+        todos = [];
+    }
+    else{
+        todos = JSON.parse(localStorage.getItem("todos"));
+    }
+}
 
 
 //console.log(todoListGroup);

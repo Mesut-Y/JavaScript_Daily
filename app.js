@@ -23,12 +23,10 @@ function addTodo(e) {
         showAlert("warning", "Lütfen geçerli bir todo yazınız.");
     }
     else{
-        console.log("submit");
         addTodoUIElement(inputText); //like UI
         addTodoMemory(inputText);  //like DB
         showAlert("success", "Todo Eklendi.");
     }
-    console.log("preventDefault");
     e.preventDefault();
 }
 
@@ -45,15 +43,12 @@ i.className="fa fa-remove";
 a.appendChild(i);
 li.appendChild(a);
 todoListGroup.appendChild(li);
-
-
 }
 
 function addTodoMemory(newTodo){
     checkStorage();
     todos.push(newTodo);
     localStorage.setItem("todos",JSON.stringify(todos));
-    console.log(todos);
 }
 
 function checkStorage(){
@@ -94,7 +89,6 @@ function removeTodo(e){
 }
 
 function removeTodoUIElement(e){
-    console.log(e.target);
     if( e.target.className === "fa fa-remove"){
         const todo = e.target.parentElement.parentElement;
         todo.remove();

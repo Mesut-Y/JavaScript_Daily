@@ -103,6 +103,7 @@ function removeTodoUIElement(e){
 
 function removeTodoMemory(e){
     checkStorage();
+    if(todos.length>0){
     todos.forEach(function (item,index){
         if(item===e.target.parentElement.parentElement.textContent) //li textcontent
         {
@@ -112,19 +113,23 @@ function removeTodoMemory(e){
     })
     localStorage.setItem("todos",JSON.stringify(todos));
     showAlert("success","todo başarıyla silindi.");
+    }
 }
 
 function removeAllTodos(e){
     localStorage.removeItem("todos");
-    console.log(todoListGroup.childNodes);
-    todoListGroup.childNodes.forEach(function (item){
-        if(item.className==="list-group-item d-flex justify-content-between")
-        {
-            item.remove();
-        }
-    })
-    loadPage();
-    showAlert("success","Tüm todo listesi silindi.");
+    if(todoListGroup.children.length>0){
+        Array.from(todoListGroup.children).forEach(function (item){
+            if(item.className=="list-group-item d-flex justify-content-between")
+            {
+                item.remove();
+            }
+        })
+        showAlert("success","Tüm todo listesi silindi.");
+    }
+    else{
+        showAlert("warning","Lütfen todo listesini kontrol ediniz.");
+    }
 }
 
 //console.log(localStorage.getItem(todos));

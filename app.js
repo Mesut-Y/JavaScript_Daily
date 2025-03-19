@@ -6,6 +6,8 @@ const todoAddButton = document.querySelector("#todoAddButton");
 const todoForm = document.querySelector("#todoAddForm");
 const todoListGroup = document.querySelector(".list-group");
 const todosClearButton = document.querySelector("#todoClearButton");
+const todoFilter = document.querySelector("#todoSearch");
+
 let todos;
 
 start();
@@ -15,6 +17,7 @@ function start(){
     document.addEventListener("DOMContentLoaded",loadPage);
     todoBody2.addEventListener("click",removeTodo);
     todosClearButton.addEventListener("click",removeAllTodos);
+    todoFilter.addEventListener("keyup",allTodoFilter);
 }
 
 function addTodo(e) {
@@ -97,7 +100,7 @@ function removeTodoUIElement(e){
 
 function removeTodoMemory(e){
     checkStorage();
-    if(todos.length>0){
+    if(todos.length>0 && e.target.className==="fa fa-remove"){
     todos.forEach(function (item,index){
         if(item===e.target.parentElement.parentElement.textContent) //li textcontent
         {
@@ -110,7 +113,7 @@ function removeTodoMemory(e){
     }
 }
 
-function removeAllTodos(e){
+function removeAllTodos(){
     localStorage.removeItem("todos");
     if(todoListGroup.children.length>0){
         Array.from(todoListGroup.children).forEach(function (item){
@@ -124,6 +127,10 @@ function removeAllTodos(e){
     else{
         showAlert("warning","Lütfen todo listesini kontrol ediniz.");
     }
+}
+
+function allTodoFilter(e){
+
 }
 
 //console.log(localStorage.getItem(todos));

@@ -130,7 +130,21 @@ function removeAllTodos(){
 }
 
 function allTodoFilter(e){
-
+    const filterValue = e.target.value.toLowerCase().trim();
+    const listOfTodos = Array.from(todoListGroup.children);
+    if(listOfTodos.length>0){
+        listOfTodos.forEach(function(item){
+            if(item.textContent.toLowerCase().trim().includes(filterValue)){
+                item.setAttribute("style", "display : block");
+            }
+            else{
+                item.setAttribute("style", "display : none !important");  //css eziyor.
+            }
+        })
+    }
+    else{
+        showAlert("warning","Todo listesi boş durumdadır. Filtrelemeye uygun değildir.")
+    }
 }
 
 //console.log(localStorage.getItem(todos));

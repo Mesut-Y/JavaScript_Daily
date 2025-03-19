@@ -116,7 +116,15 @@ function removeTodoMemory(e){
 
 function removeAllTodos(e){
     localStorage.removeItem("todos");
+    console.log(todoListGroup.childNodes);
+    todoListGroup.childNodes.forEach(function (item){
+        if(item.className==="list-group-item d-flex justify-content-between")
+        {
+            item.remove();
+        }
+    })
     loadPage();
     showAlert("success","Tüm todo listesi silindi.");
 }
-console.log(localStorage.getItem(todos));
+
+//console.log(localStorage.getItem(todos));

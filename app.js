@@ -89,7 +89,7 @@ function loadPage(){
 
 function removeTodo(e){
     removeTodoUIElement(e);
-    //removeTodoMemory();
+    removeTodoMemory(e);
 }
 
 function removeTodoUIElement(e){
@@ -100,5 +100,17 @@ function removeTodoUIElement(e){
     }
 }
 
+function removeTodoMemory(e){
+    checkStorage();
+    todos.forEach(function (item,index){
+        if(item===e.target.parentElement.parentElement.textContent) //li textcontent
+        {
+            todos.splice(index,1);
+            
+        }
+    })
+    localStorage.setItem("todos",JSON.stringify(todos));
+    showAlert("success","todo başarıyla silindi.");
+}
 
-//console.log(todoListGroup);
+console.log(localStorage.getItem(todos));

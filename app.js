@@ -14,6 +14,7 @@ function start(){
     todoAddButton.addEventListener("click",addTodo);  //- todoForm.addEventListener("submit", addTodo); 
     document.addEventListener("DOMContentLoaded",loadPage);
     todoBody2.addEventListener("click",removeTodo);
+    todosClearButton.addEventListener("click",removeAllTodos);
 }
 
 function addTodo(e) {
@@ -73,7 +74,7 @@ function showAlert(alertType, alertMessage){
 
     setTimeout(function(){
         div.remove();
-    },2000);
+    },1000);
 
 //  <div class="alert alert-warning" role="alert">
 //   This is a warning alert—check it out!
@@ -113,4 +114,9 @@ function removeTodoMemory(e){
     showAlert("success","todo başarıyla silindi.");
 }
 
+function removeAllTodos(e){
+    localStorage.removeItem("todos");
+    loadPage();
+    showAlert("success","Tüm todo listesi silindi.");
+}
 console.log(localStorage.getItem(todos));

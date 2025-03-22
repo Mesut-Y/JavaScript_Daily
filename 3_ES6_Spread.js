@@ -8,7 +8,7 @@ const add = (a,b,c,d) => {
 console.log("Eski Yöntem: ", add(numbers[0],numbers[1],numbers[2],numbers[3]));
 
 //Spread
-console.log("Yeni Yöntem: ", add(...numbers));
+console.log("Yeni Yöntem: ", add(...numbers)); // ...numbers = numbers[0],numbers[1],numbers[2],numbers[3]
 
 let languages1 = ["Java", "C#", "JavaScript"];
 let languages2 = ["PHP", "Python", languages1[0], languages1[1], languages1[2]]; //Eski Yöntem
@@ -21,10 +21,5 @@ const months1 = ["April", "May", "June"];
 const months2 = ["January", "February", ...months1]; //Spread
 
 console.log("Spread Kullanımı: ", months2);
-
-
-
-
-
 
 

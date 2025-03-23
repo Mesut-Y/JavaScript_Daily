@@ -13,7 +13,7 @@ for (let i in names){ //in kodu ile dizi indexi döner.
 }
 
 
-console.log("-------------for of --------------------");
+console.log("-------------For of --------------------");
 for (let j of names){ //of kodu ile dizi itemleri döner.
     console.log("Dizinin ", names.indexOf(j), ".elemanı: ", j);
 }

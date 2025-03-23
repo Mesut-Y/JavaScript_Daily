@@ -25,11 +25,14 @@ futbolTeams.add("Sivasspor");
 
 console.log(futbolTeams);
 console.log("Set listesinin elaman sayısı: ", futbolTeams.size);
+console.log("Göztepe değerinin sette olup olmama sorgusu: ", futbolTeams.has("Göztepe"));
 
 console.log("------- set for of kullanımı---------");
 for(let value of futbolTeams){   //index olmadığı için for in kullanılmaz.
     console.log(value);
 }
+console.log("Göztepe değeri set listesinden silindi: ", futbolTeams.delete("Göztepe"));
+
 console.log("------- set foreach kullanımı---------");
 futbolTeams.forEach((value)=>{
     console.log(value);

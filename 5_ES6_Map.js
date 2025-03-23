@@ -60,3 +60,18 @@ keys.forEach((key)=>{
 //     console.log(key);
 // })
 
+console.log("-------- map -> array dönüşümü  ---------");
+let array = Array.from(cities);
+array.forEach(deger=>{
+   console.log(deger[0], deger[1]);
+})
+
+console.log("-------- array -> map dönüşümü  ---------");
+const arrayCities = [
+    [81, "Düzce"],
+    [80, "Osmaniye"],
+    [79, "Kilis"]
+]
+
+const arrayToMap = new Map(arrayCities);
+console.log(arrayToMap);

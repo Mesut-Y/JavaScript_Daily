@@ -75,3 +75,4 @@ const arrayCities = [
 
 const arrayToMap = new Map(arrayCities);
 console.log(arrayToMap);
+

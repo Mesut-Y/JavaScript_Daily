@@ -34,5 +34,29 @@ console.log("Ankara değeri için value kontrolü(incldue): ",Array.from(cities.
 console.log("Ankara değeri için value kontrolü(spread-some-arrow function): ", [...cities.values()].some(val => val==="Ankara")); //some koşul
 console.log("Ankara değeri için value kontrolü(spread-find-arrow function): ", [...cities.values()].find(val => val==="Ankara")); //some koşul
 
+console.log("------------for of döngüsü ---------------");
+for(let kv of cities){  //distructing
+    console.log(kv);
+}
+console.log("------ for of döngüsü ve distructing-------");
+for(let [key,value] of cities){  //distructing
+    console.log(key,"elemanı: ",value);
+}
+console.log("------------ for of döngüsü ---------------");
+for(let val of cities.values()){
+    console.log(val);
+}
+console.log("------ array.from ve for in döngüsü -------");
+const keys = Array.from(cities.keys());
+for(let i in keys){
+    console.log(i);
+}
+console.log("-------- foreach arrow function  ---------");
+keys.forEach((key)=>{
+    console.log(key, cities.get(key));
+})
 
+// keys.forEach(function (key){
+//     console.log(key);
+// })
 

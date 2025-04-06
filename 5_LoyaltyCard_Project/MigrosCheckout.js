@@ -26,7 +26,8 @@ if (hasLoyaltyCard) {
     let surname = prompt("Soyadınızı giriniz.")
     let customer1 = new MigrosCustomer(name, surname, hasLoyaltyCard, shoppingList);
     totalPrice = customer1.calculateCartTotal();
-    alert(`Toplam tutar: ${totalPrice}`);
+    alert(`Sayın ${name} ${surname},
+        Toplam tutar: ${totalPrice}`);
 }
 else {
     //there is not a discount card

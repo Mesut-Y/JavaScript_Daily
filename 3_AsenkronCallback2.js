@@ -32,3 +32,6 @@ getName((name, address, counter) => {
 Günlük giriş yapan sayısı: ${counter} `);
     })
 }); //arrowfunction
+
+//ardışık metodlar kodlanırken CALLBACK HELL sorunu yaşanır.
+//bundan dolayı  PROMISE - ASYNC & AWAIT

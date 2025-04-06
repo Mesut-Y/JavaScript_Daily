@@ -1,11 +1,11 @@
-let numbers =[10,20,30,40];
+let numbers = [10, 20, 30, 40];
 
-const add = (a,b,c,d) => {
-    return (a+b+c+d);
+const add = (a, b, c, d) => {
+    return (a + b + c + d);
 }
 
 //Eski Yöntem
-console.log("Eski Yöntem: ", add(numbers[0],numbers[1],numbers[2],numbers[3]));
+console.log("Eski Yöntem: ", add(numbers[0], numbers[1], numbers[2], numbers[3]));
 
 //Spread
 console.log("Yeni Yöntem: ", add(...numbers)); // ...numbers = numbers[0],numbers[1],numbers[2],numbers[3]

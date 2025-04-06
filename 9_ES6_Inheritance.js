@@ -1,32 +1,32 @@
-class Vehicle{
+class Vehicle {
 
-    constructor(brand, model){
+    constructor(brand, model) {
         this.brand = brand;
         this.model = model;
     }
-    movement(speed){
+    movement(speed) {
         console.log(`${this.brand} marka ${this.model} model aracınız hızı ${speed}`);
     }
 }
 
-class Car extends Vehicle{
-    
-    constructor(brand,model,year){
+class Car extends Vehicle {
+
+    constructor(brand, model, year) {
         super(brand, model);
         this.year = year;
     }
-    getYear(){
+    getYear() {
         return this.year;
     }
 }
 
-class Motorcycle extends Vehicle{
-    
-    constructor(brand,model,color){
+class Motorcycle extends Vehicle {
+
+    constructor(brand, model, color) {
         super(brand, model);
         this.color = color;
     }
-    getColor(){
+    getColor() {
         return this.color;
     }
 }

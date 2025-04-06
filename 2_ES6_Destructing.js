@@ -15,7 +15,7 @@ let city1, city2, city3, city4, city5;
 
 console.log(city1, city2, city3, city4, city5);
 
-const calculate = (num1, num2) =>{
+const calculate = (num1, num2) => {
     const addition = num1 + num2;
     const subtraction = num1 - num2;
     const multiplication = num1 * num2;
@@ -23,14 +23,14 @@ const calculate = (num1, num2) =>{
     return [addition, subtraction, multiplication, division];
 }
 
-let [add, sub, mul, div] = calculate(10,2); //let silince hata vermez default var tanımlar.
+let [add, sub, mul, div] = calculate(10, 2); //let silince hata vermez default var tanımlar.
 console.log(add, sub, mul, div);
 
 const car = {
-    brand : "TOGG",
-    model : "T10X",
-    year : 2024,
-    color : "red"
+    brand: "TOGG",
+    model: "T10X",
+    year: 2024,
+    color: "red"
 }
 
 // let marka, model, sene, renk;
@@ -46,5 +46,5 @@ const car = {
 // console.log(brand, model, year, color);
 
 // Destructing
-let {brand:marka, model:model, year:sene, color:renk} = car; //nesne attribute ları yeni değişken isimlerine atandı.
+let { brand: marka, model: model, year: sene, color: renk } = car; //nesne attribute ları yeni değişken isimlerine atandı.
 console.log(marka, model, sene, renk);

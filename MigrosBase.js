@@ -11,10 +11,10 @@ class MigrosBase {
         if (this.hasLoyaltyCard) {
             let discountAmount = 20;
             this.shoppinhList.forEach(element => {
-                total += element.price*(100-discountAmount)/100;
+                total += element.price * (100 - discountAmount) / 100;
             });
         }
-        else{
+        else {
             this.shoppinhList.forEach(element => {
                 total += element.price;
             });

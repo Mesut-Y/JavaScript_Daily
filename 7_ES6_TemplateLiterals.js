@@ -1,4 +1,4 @@
-const func1 = (firstName, secondName) =>{
+const func1 = (firstName, secondName) => {
     console.log("Eski Yöntem => İsim: " + firstName + " Soyisim: " + secondName);
     console.log(`Template Literal => İsim: ${firstName} Soyisim: ${secondName}`);
     console.log(`Template Literal2 => 
@@ -9,7 +9,7 @@ const func1 = (firstName, secondName) =>{
 console.log(func1("Tuna", "Tan"));
 
 
-function getUserById(userId){
+function getUserById(userId) {
     //fetch(`http://localhost:8080/users/${userId}`)
     console.log(`http://localhost:8080/users/${userId}`);
 }

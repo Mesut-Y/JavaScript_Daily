@@ -3,15 +3,16 @@
 
 function getName(callback){
     setTimeout(() => {
-        console.log("Mesut");
-        callback();
+        let name = "Mesut" // web servisten gelmiş örneği
+        callback(name);
     }, 1000);
 
 }
 
-function getSurname(){
+function getSurname(name){
     setTimeout(() => {
-        console.log("Y");
+        let surname = "Y"; //web servisten gelmiş örneği
+        console.log(`Hoşgeldiniz ${name} ${surname}`);
     }, 500);
 }
 

@@ -1,15 +1,21 @@
-function getName(){
+//callback : fonksiyonu farklı fonksiyona parametre yaparak
+// asenkron çalışmayı senkrona çevirir.
+
+function getName(callback){
     setTimeout(() => {
         console.log("Mesut");
-    }, 500);
-    
+        callback();
+    }, 1000);
+
 }
 
 function getSurname(){
     setTimeout(() => {
-        console.log("Y"); 
-    }, 1000);
+        console.log("Y");
+    }, 500);
 }
 
-getSurname(); //1000ms
-getName(); //500ms
+// getName(); //1000ms
+// getSurname(); //500ms
+
+getName(getSurname);

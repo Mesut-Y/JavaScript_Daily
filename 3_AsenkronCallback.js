@@ -1,10 +1,15 @@
 function getName(){
-    console.log("Mesut");
+    setTimeout(() => {
+        console.log("Mesut");
+    }, 500);
+    
 }
 
 function getSurname(){
-    console.log("Y");
+    setTimeout(() => {
+        console.log("Y"); 
+    }, 1000);
 }
 
-getName();
-getSurname();
+getSurname(); //1000ms
+getName(); //500ms

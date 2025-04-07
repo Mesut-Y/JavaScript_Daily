@@ -37,3 +37,15 @@ getData2("https://jsonplaceholder.typicode.com/posts")
 .then(response => response.json())
 .then(data => console.log(data))
 .catch(err => console.log("2.yöntem hatası"));
+
+function saveStudents(){
+    fetch("https://jsonplaceholder.typicode.com/students" , {    //post örneği
+        method : "POST",
+        headers : { "Content-Type" : "application/json"},
+        body : JSON.stringify( {
+            "id": 84,
+            "firstname": "S"
+        })
+    });
+}
+//saveStudents();

@@ -8,20 +8,21 @@ const users = [
     { userId : 7, post : "C Post 1" }
 ];
 
-function getUserId(){
+function getUserId(callback){
     setTimeout(() => {
         //Servisten cevap alınması simüle edildi.
-        return 5;
+        //return 5;
+        let id = 5;
+        callback(id);
     }, 1000);
 }
 
-function getPostByUserId(callback){
-    let id =callback();
-    console.log(id);  //getUserId metodu 1000ms işlemini tamamlamadı.
+function getPostByUserId(userId){
+    console.log(userId);  //getUserId metodu 1000ms işlemini tamamlamadı.
     //Restapi isteği simüle edildi.
     setTimeout((user) => {
         users.forEach((user) => {
-            if(user.userId === id){
+            if(user.userId === userId){
                 console.log(user.post);
             }
         });
@@ -31,4 +32,4 @@ function getPostByUserId(callback){
 // let userId = getUserId(); //1000 ms
 // getPostByUserId(userId); //500 ms
 
-getPostByUserId(getUserId); //500 ms
+getUserId((getPostByUserId));

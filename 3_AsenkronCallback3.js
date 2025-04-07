@@ -17,7 +17,24 @@ function getUserId(callback){
     }, 1000);
 }
 
-function getPostByUserId(userId){
+// function getPostByUserId(userId){
+//     console.log(userId);  //getUserId metodu 1000ms işlemini tamamlamadı.
+//     //Restapi isteği simüle edildi.
+//     setTimeout((user) => {
+//         users.forEach((user) => {
+//             if(user.userId === userId){
+//                 console.log(user.post);
+//             }
+//         });
+//     }, 500);
+// }
+
+// let userId = getUserId(); //1000 ms
+// getPostByUserId(userId); //500 ms
+
+//getUserId((getPostByUserId));
+
+getUserId((userId)=>{
     console.log(userId);  //getUserId metodu 1000ms işlemini tamamlamadı.
     //Restapi isteği simüle edildi.
     setTimeout((user) => {
@@ -27,9 +44,4 @@ function getPostByUserId(userId){
             }
         });
     }, 500);
-}
-
-// let userId = getUserId(); //1000 ms
-// getPostByUserId(userId); //500 ms
-
-getUserId((getPostByUserId));
+})

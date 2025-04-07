@@ -7,13 +7,13 @@ Asenkron Örnekleri:
 ----- Asenkron Kontrolü için => CALLBACK - PROMISE - ASYNC & AWAIT 
 */
 
-setTimeout(()=>{    //asenkron komutlar kendi zamanlamasına(aniden veya süreli) göre çalışır.
+setTimeout(() => {    //asenkron komutlar kendi zamanlamasına(aniden veya süreli) göre çalışır.
     console.log("1000ms çalışır.")
-},1000);
+}, 1000);
 
-setTimeout(()=>{
+setTimeout(() => {
     console.log("500ms çalışır.")
-},500);
+}, 500);
 
 
 console.log("Senkron komut 1") //senkron çalışanlar normal sırada çalışır.

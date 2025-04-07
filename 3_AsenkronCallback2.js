@@ -1,7 +1,7 @@
 //callback : fonksiyonu farklı fonksiyona parametre yaparak
 // asenkron çalışmayı senkrona çevirir.
 
-function getName(callback){
+function getName(callback) {
     setTimeout(() => {
         let name = "Mesut" // web servisten gelmiş örneği
         callback(name, "Sayın", 56);
@@ -9,7 +9,7 @@ function getName(callback){
 
 }
 
-function getSurname(name, address, counter, callback){
+function getSurname(name, address, counter, callback) {
     setTimeout(() => {
         let surname = "Y"; //web servisten gelmiş örneği
         callback(surname);
@@ -26,9 +26,9 @@ function getSurname(name, address, counter, callback){
 
 //getName(getSurname)
 getName((name, address, counter) => {
-    getSurname(name,address,counter, (surname) =>{
+    getSurname(name, address, counter, (surname) => {
         console.log(
-`Hoşgeldiniz ${address} ${name} ${surname},
+            `Hoşgeldiniz ${address} ${name} ${surname},
 Günlük giriş yapan sayısı: ${counter} `);
     })
 }); //arrowfunction

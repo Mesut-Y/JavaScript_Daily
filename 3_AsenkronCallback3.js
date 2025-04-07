@@ -1,14 +1,14 @@
 //http istekleri  timeout ile http istekleri simüle edilmiştir.
 
 const users = [
-    { userId : 5, post : "A Post 1" },
-    { userId : 5, post : "A Post 2" },
-    { userId : 5, post : "A Post 3" },
-    { userId : 6, post : "B Post 1" },
-    { userId : 7, post : "C Post 1" }
+    { userId: 5, post: "A Post 1" },
+    { userId: 5, post: "A Post 2" },
+    { userId: 5, post: "A Post 3" },
+    { userId: 6, post: "B Post 1" },
+    { userId: 7, post: "C Post 1" }
 ];
 
-function getUserId(callback){
+function getUserId(callback) {
     setTimeout(() => {
         //Servisten cevap alınması simüle edildi.
         //return 5;
@@ -34,12 +34,12 @@ function getUserId(callback){
 
 //getUserId((getPostByUserId));
 
-getUserId((userId)=>{
+getUserId((userId) => {
     console.log(userId);  //getUserId metodu 1000ms işlemini tamamlamadı.
     //Restapi isteği simüle edildi.
     setTimeout((user) => {
         users.forEach((user) => {
-            if(user.userId === userId){
+            if (user.userId === userId) {
                 console.log(user.post);
             }
         });

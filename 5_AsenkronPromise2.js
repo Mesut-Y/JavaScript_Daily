@@ -1,4 +1,4 @@
-// Promise  XMLHttpRequest
+// Promise  XMLHttpRequest(Local)
 
 function getStudents(url) {
     return new Promise((resolve, reject) => {

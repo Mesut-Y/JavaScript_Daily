@@ -24,3 +24,5 @@ createPromise()
     .then((response) => { console.log(response); })
     .catch((error) => { console.log(error); })
     .finally(() => { console.log("her zaman çalışır.") });
+
+

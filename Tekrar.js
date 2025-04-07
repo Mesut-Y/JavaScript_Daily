@@ -30,14 +30,14 @@ function getStudents(url) {
     return new Promise((resolve, reject) => {
         let xhr = new XMLHttpRequest();
         xhr.addEventListener("readystatechange", () => {
-        try {
-            if (xhr.status === 200 && xhr.readyState === 4) {
-                resolve(JSON.parse(xhr.responseText));
+            try {
+                if (xhr.status === 200 && xhr.readyState === 4) {
+                    resolve(JSON.parse(xhr.responseText));
+                }
+            } catch (error) {
+                reject(error);
             }
-        } catch (error) {
-            reject(error);
-        }
-    })
+        })
         xhr.open("GET", url);
         xhr.send();
     })

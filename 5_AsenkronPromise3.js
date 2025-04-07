@@ -18,6 +18,10 @@ function getUsers(url){
 }
 
 getUsers("https://jsonplaceholder.typicode.com/users")
-.then(data => { console.log(data)})
+.then(data => { 
+    console.log(data);
+    data.forEach(element => {
+        console.log(element.name);
+    });})
 .catch(err => {console.log(err)})
 .finally(() => { console.log("finally");})

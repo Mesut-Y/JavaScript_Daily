@@ -10,37 +10,47 @@ const ImageListWrapper = document.querySelector(".imageList-wrapper");
 
 runEventListeners();
 
-function runEventListeners(){
+function runEventListeners() {
     // searchButton.addEventListener("click", search);
     form.addEventListener("submit", search);
-    
+    clearButton.addEventListener("click", clearImages);
 }
 
-function search(e){
-    
+function clearImages(){
+    searchInput.value="";
+    Array.from(ImageListWrapper.children).forEach(data =>{ data.remove(); });
+}
+
+function search(e) {
+
     const searchValue = searchInput.value.trim().toLocaleLowerCase();
-    
+
     fetch(`https://api.unsplash.com/search/photos?query=${searchValue}`, {
-        method : "GET",
-        headers : { 
+        method: "GET",
+        headers: {
             Authorization: "Client-ID 03Qi23YZyMbo4UhPaUaEimKi1YbIyfwgTqpDZ1Rll7s"
         }
     })
-    .then(res => res.json())
-    .then(data => {
-        console.log(data.results)
-        Array.from(data.results).forEach((image) => {
-            //console.log(image.urls.small);
-            addImagetoUI(image.urls.small);
+        .then(res => res.json())
+        .then(data => {
+            console.log(data.results)
+            Array.from(data.results).forEach((image) => {
+                //console.log(image.urls.small);
+                addImagetoUI(image.urls.small);
+            })
         })
-    })
-    .catch(err => console.log(err));
+        .catch(err => console.log(err));
 
     console.log(searchValue);
     e.preventDefault();
 }
 
-function addImagetoUI(url){
+function addImagetoUI(url) {
+    /*
+    <div class="card">
+        <img src="" alt="">
+    </div>
+    */
     const div = document.createElement("div");
     div.className = "card";
 

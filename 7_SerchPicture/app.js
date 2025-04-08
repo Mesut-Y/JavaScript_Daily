@@ -20,7 +20,21 @@ function search(e){
     
     const searchValue = searchInput.value.trim().toLocaleLowerCase();
     
-    
+    fetch(`https://api.unsplash.com/search/photos?query=${searchValue}`, {
+        method : "GET",
+        headers : { 
+            Authorization: "Client-ID 03Qi23YZyMbo4UhPaUaEimKi1YbIyfwgTqpDZ1Rll7s"
+        }
+    })
+    .then(res => res.json())
+    .then(data => {
+        console.log(data.results)
+        Array.from(data.results).forEach((image) => {
+            console.log(image.urls.small);
+        })
+    })
+    .catch(err => console.log(err));
+
     console.log(searchValue);
     e.preventDefault();
 }

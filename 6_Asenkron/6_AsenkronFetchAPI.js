@@ -17,8 +17,8 @@ function getData(url) {
         .then(response => response.json())
         .then(data => {
             console.log(data);
-            for(let content of data){
-                if(content.userId === 9){
+            for (let content of data) {
+                if (content.userId === 9) {
                     console.log(content.id);
                     console.log(content.title)
                 }
@@ -29,20 +29,20 @@ function getData(url) {
 
 getData("https://jsonplaceholder.typicode.com/posts");
 
-function getData2(url){
+function getData2(url) {
     return fetch(url);
 }
 
 getData2("https://jsonplaceholder.typicode.com/posts")
-.then(response => response.json())
-.then(data => console.log(data))
-.catch(err => console.log("2.yöntem hatası"));
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(err => console.log("2.yöntem hatası"));
 
-function saveStudents(){
-    fetch("https://jsonplaceholder.typicode.com/students" , {    //post örneği
-        method : "POST",
-        headers : { "Content-Type" : "application/json"},
-        body : JSON.stringify( {
+function saveStudents() {
+    fetch("https://jsonplaceholder.typicode.com/students", {    //post örneği
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
             "id": 84,
             "firstname": "S"
         })

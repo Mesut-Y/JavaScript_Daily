@@ -16,15 +16,15 @@ function runEventListeners() {
     clearButton.addEventListener("click", clearImages);
 }
 
-function clearImages(){
-    searchInput.value="";
-    Array.from(ImageListWrapper.children).forEach(data =>{ data.remove(); });
+function clearImages() {
+    searchInput.value = "";
+    Array.from(ImageListWrapper.children).forEach(data => { data.remove(); });
+    //ImageListWrapper.innerHTML=""; //basit yöntem
 }
 
 function search(e) {
-
     const searchValue = searchInput.value.trim().toLocaleLowerCase();
-
+    clearImages();
     fetch(`https://api.unsplash.com/search/photos?query=${searchValue}`, {
         method: "GET",
         headers: {
@@ -41,7 +41,7 @@ function search(e) {
         })
         .catch(err => console.log(err));
 
-    console.log(searchValue);
+    //console.log(searchValue);
     e.preventDefault();
 }
 

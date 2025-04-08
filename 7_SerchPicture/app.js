@@ -30,12 +30,26 @@ function search(e){
     .then(data => {
         console.log(data.results)
         Array.from(data.results).forEach((image) => {
-            console.log(image.urls.small);
+            //console.log(image.urls.small);
+            addImagetoUI(image.urls.small);
         })
     })
     .catch(err => console.log(err));
 
     console.log(searchValue);
     e.preventDefault();
+}
+
+function addImagetoUI(url){
+    const div = document.createElement("div");
+    div.className = "card";
+
+    const img = document.createElement("img");
+    img.setAttribute("src", url);
+    img.height = "400";
+    img.width = "400";
+
+    div.appendChild(img);
+    ImageListWrapper.appendChild(div);
 }
 

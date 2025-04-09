@@ -5,7 +5,8 @@ class Currency{
 
     async exchange(amount, firstCurrency, secondCurrency){
         const response = await fetch(`${this.url}${firstCurrency}`);
-        const data = await response.json();
-        console.log(data);
+        const datas = await response.json();
+        const exchangedResult = datas.data[secondCurrency];
+        return amount * exchangedResult;
     }
 }

@@ -17,5 +17,9 @@ function exchange(){
     const firstOptionValue = firstOption.options[firstOption.selectedIndex].textContent;
     const secondOptionValue = secondOption.options[secondOption.selectedIndex].textContent;
     console.log(amount, firstOptionValue, secondOptionValue);
-    currency.exchange(amount, firstOptionValue, secondOptionValue);
+    const promise = currency.exchange(amount, firstOptionValue, secondOptionValue);
+    
+    promise
+    .then(data => resultMoney.value = data.toFixed(3))
+    .catch(err => console.log(err));
 }
